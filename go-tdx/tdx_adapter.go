@@ -10,6 +10,7 @@ package tdx
 import (
 	"crypto/sha512"
 	"encoding/json"
+	"fmt"
 
 	"github.com/google/go-configfs-tsm/configfs/linuxtsm"
 	"github.com/google/go-configfs-tsm/report"
@@ -55,6 +56,7 @@ func (adapter *tdxAdapter) CollectEvidence(nonce []byte) (*connector.Evidence, e
 		return nil, err
 	}
 
+    fmt.Println("Quote from Adapter:", quote)
 	var eventLog []byte
 	if adapter.EvLogParser != nil {
 		rtmrEventLogs, err := adapter.EvLogParser.GetEventLogs()
