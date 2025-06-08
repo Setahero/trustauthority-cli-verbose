@@ -85,7 +85,7 @@ func getQuoteFromConfigFS(reportData []byte) ([]byte, error) {
 		GetAuxBlob: false,
 	}
 	resp, err := linuxtsm.GetReport(req)
-	fmt.Println("Response from linuxtsm:", linxutsm)
+	fmt.Println("Response from linuxtsm:", linuxtsm)
 
 	if err != nil {
 		return nil, err
